@@ -1,6 +1,6 @@
 import Test.Hspec
 import Day1 (frequency1, frequency2)
-import Day2 (checksum)
+import Day2 (checksum, offByOne)
 
 main :: IO ()
 main = hspec $ do
@@ -25,3 +25,6 @@ main = hspec $ do
         describe "Day2.checksum" $ do
             it "returns 12 for abcdef, bababc, abbcde, abcccd, aabcdd, abcdee, ababab" $ do
                 checksum ["abcdef", "bababc", "abbcde", "abcccd", "aabcdd", "abcdee", "ababab"] `shouldBe` 12
+        describe "Day2.offByOne" $ do
+            it "returns fgij for abcde, fghij, klmno, pqrst, fguij, axcye, wvxyz" $ do
+                offByOne ["abcde", "fghij", "klmno", "pqrst", "fguij", "axcye", "wvxyz"] `shouldBe` "fgij"

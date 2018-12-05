@@ -1,7 +1,7 @@
 module Main where
 
 import Day1 (frequency1, frequency2)
-import Day2 (checksum)
+import Day2 (checksum, offByOne)
 
 main :: IO ()
 main = do
@@ -17,4 +17,7 @@ main = do
         "2-1" -> do
             contents <- readFile "input/day2.txt"
             putStrLn . show . checksum . lines $ contents
+        "2-2" -> do
+            contents <- readFile "input/day2.txt"
+            putStrLn . show . offByOne . lines $ contents
         _ -> putStrLn "Invalid day selected"
